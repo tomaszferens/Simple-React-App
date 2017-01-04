@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
+
+body {
+    margin: 0;
+}
+
+.reactaurant {
+    width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &>h1{
+        font-family: 'Cookie', cursive;
+        font-size: 80px;
+        width: 310px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .reactaurant {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .reactaurant {
+        width: 380px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    width: 1320px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    
+    .menu {
+        width: 440px;
+        height: 800px;
+        outline: 1px solid black;
+
+        &>h1 {
+            font-family: 'Cookie', cursive;
+            display: relative;
+            position: relative;
+            z-index: 1;
+            color: #B71C1C;
+
+            &:before {
+                border-top: 2px solid #dfdfdf;
+                content:"";
+                margin: 0 auto; 
+                position: absolute; 
+                top: 50%; left: 0; right: 0; bottom: 0;
+                width: 95%;
+                z-index: -1;
+            }
+
+            span {
+                background: #fff; 
+                padding: 0 15px; 
+            }
+        }
+
+        ul.list-of-dishes {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .order {
+
+        width: 440px;
+    }
+
+    .inventory {
+
+        width: 440px;
+    }
+
+}
+
+ul.list-of-dishes > li.menu-dish {
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            width: 70px;
+            border-radius: 5px 5px 5px 5px;
+            border: none;
+            background: #333030;
+            color: #FFFFFF;
+            margin-bottom: 1px;
+
+            &:hover {
+                background: rgba(#333030, .9);
+                cursor: pointer;
+            }
+        }
+    }
+
+    h4 {
+        width: 120px;
+        height: 40px;
+        margin: 0;
+    }
+    span.price {
+        font-weight: bold;
+    }
+    p {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px
+    }
+}
+
+.group {
+    width: 320px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    position:relative; 
+    margin-bottom:45px;
+
+    input {
+        font-size:18px;
+        padding:10px 10px 10px 5px;
+        display:block;
+        width:300px;
+        border:none;
+        border-bottom:1px solid #757575;
+    }
+
+    input:focus { outline:none; }
+
+
+    label {
+        color:#999; 
+        font-size:18px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:10px;
+        transition:0.2s ease all; 
+    }
+
+    input:focus ~ label, input:valid ~ label {
+        top:-20px;
+        font-size:14px;
+        color:#5264AE;
+    }
+
+    button {
+        margin-top: 10px;
+        height: 30px;
+        width: 315px;
+        border-radius: 5px 5px 5px 5px;
+        border: none;
+        background: #333030;
+        color: #FFFFFF;
+    }
+
+    button:hover {
+        background: rgba(#333030, .9);
+        cursor: pointer;
+    }
+
+    button:focus {
+        background: rgba(#333030, .8);
+    }
+}
