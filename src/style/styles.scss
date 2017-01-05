@@ -13,10 +13,11 @@ body {
     &>h1{
         font-family: 'Cookie', cursive;
         font-size: 80px;
-        width: 310px;
+        width: 315px;
         margin-left: auto;
         margin-right: auto;
         line-height: 10%;
+        color: #7a2605;
     }
 
 }
@@ -37,12 +38,14 @@ body {
     display: flex;
     width: 1320px;
     font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
     text-align: center;
     
     .menu {
+        border: 1px solid black;
         width: 440px;
-        height: 800px;
-        outline: 1px solid black;
+        min-height: 800px;
+        margin-bottom: 50px;
 
         &>h1 {
             font-family: 'Cookie', cursive;
@@ -75,13 +78,15 @@ body {
     }
 
     .order {
-
+        border: 1px solid black;
         width: 440px;
+        margin-bottom: 50px;
     }
 
     .inventory {
-
+        border: 1px solid black;
         width: 440px;
+        margin-bottom: 50px;
     }
 
 }
@@ -93,10 +98,15 @@ ul.list-of-dishes > li.menu-dish {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 
+    img {
+        margin-right: 1px;
+    }
+
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
 
         button {
             width: 70px;
@@ -115,7 +125,6 @@ ul.list-of-dishes > li.menu-dish {
 
     h4 {
         width: 120px;
-        height: 40px;
         margin: 0;
     }
     span.price {
@@ -123,8 +132,6 @@ ul.list-of-dishes > li.menu-dish {
     }
     p {
         font-size: 12px;
-        margin-top: 10px;
-        margin-bottom: 10px
     }
 }
 
@@ -183,5 +190,35 @@ ul.list-of-dishes > li.menu-dish {
 
     button:focus {
         background: rgba(#333030, .8);
+    }
+}
+.inventory {
+    & > button {
+        margin-top: 100px;
+    }
+
+    .dish-form {
+        input:nth-of-type(1) {
+            padding: 5px 2px;
+        }
+        input:nth-of-type(2) {
+            padding: 5px 2px;
+        }
+        input:nth-of-type(3) {
+            width: 429px;
+        }
+        select {
+            padding: 5px 0px;
+        }
+        button {
+            width: 433px;
+        }
+        textarea {
+            display: block;
+            width: 427px;
+            margin-left: 2px;
+            height: 50px;
+        }
+
     }
 }

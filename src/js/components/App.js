@@ -16,6 +16,14 @@ export default class App extends Component {
         };
         
         this.loadSamples = this.loadSamples.bind(this);
+        this.addDish = this.addDish.bind(this);
+    }
+
+    addDish(dish) {
+        const dishes = {...this.state.dishes};
+        const timestamp = Date.now();
+        dishes[`dish-${timestamp}`] = dish;
+        this.setState({ dishes });
     }
 
     loadSamples() {
@@ -42,7 +50,7 @@ export default class App extends Component {
                         </ul>
                     </div>
                     <Order />
-                    <Inventory loadSamples={this.loadSamples} />
+                    <Inventory addDish={this.addDish} loadSamples={this.loadSamples} />
                 </div>
             </div>
         );
