@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import Order from './Order';
-import Inventory from './Inventory';
 import Dish from './Dish';
+import Header from './Header';
+import Inventory from './Inventory';
+import Order from './Order';
 
 import sampleDishes from '../../sample-dishes';
 
@@ -35,7 +36,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="reactaurant">
-                <h1>Reactaurant</h1>
+                <Header tagline="Reactaurant" />
                 <div className="wrapper">
                     <div className="menu">
                         <h1><span>Menu</span></h1>

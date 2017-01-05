@@ -13,6 +13,7 @@ class Inventory extends Component {
         this.props.addDish(dish);
         this.dishForm.reset();
     }
+    
     render() {
         return (
             <div className="inventory">
