@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Dish extends Component {
     render() {
-        const { details } = this.props;
+        const { details, index } = this.props;
         return(
             <li className="menu-dish">
                 <img src={details.image} />
@@ -11,7 +11,7 @@ class Dish extends Component {
                         {details.name}
                     </h4>
                         <p>{details.desc}</p>
-                        <button type="button">Buy</button>
+                        <button onClick={() => this.props.addToOrder(index)} type="button">Buy</button>
                 </div>
                 <span className="price">{details.price}</span>
             </li>

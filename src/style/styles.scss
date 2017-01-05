@@ -76,19 +76,6 @@ body {
             padding: 0;
         }
     }
-
-    .order {
-        border: 1px solid black;
-        width: 440px;
-        margin-bottom: 50px;
-    }
-
-    .inventory {
-        border: 1px solid black;
-        width: 440px;
-        margin-bottom: 50px;
-    }
-
 }
 
 ul.list-of-dishes > li.menu-dish {
@@ -193,6 +180,10 @@ ul.list-of-dishes > li.menu-dish {
     }
 }
 .inventory {
+    border: 1px solid black;
+    width: 440px;
+    margin-bottom: 50px;
+
     & > button {
         margin-top: 100px;
     }
@@ -220,5 +211,20 @@ ul.list-of-dishes > li.menu-dish {
             height: 50px;
         }
 
+    }
+}
+
+.order {
+    border: 1px solid black;
+    width: 440px;
+    margin-bottom: 50px;
+
+    .order-list > li {
+        margin: 5px 0px;
+    }
+
+    .order-list > li:last-of-type {
+        margin-top: 20px;
+        list-style: none;
     }
 }

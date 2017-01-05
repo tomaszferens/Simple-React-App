@@ -18,6 +18,7 @@ export default class App extends Component {
         
         this.loadSamples = this.loadSamples.bind(this);
         this.addDish = this.addDish.bind(this);
+        this.addToOrder = this.addToOrder.bind(this);
     }
 
     addDish(dish) {
@@ -33,6 +34,12 @@ export default class App extends Component {
         });
     }
 
+    addToOrder(key) {
+        const order = {...this.state.order};
+        order[key] = order[key] + 1 || 1;
+        this.setState({ order });
+    }
+
     render() {
         return (
             <div className="reactaurant">
@@ -45,12 +52,16 @@ export default class App extends Component {
                                 Object
                                     .keys(this.state.dishes)
                                     .map(key => 
-                                        <Dish key={key} details={this.state.dishes[key]} />
+                                        <Dish key={key} index={key} details={this.state.dishes[key]} addToOrder={this.addToOrder} />
                                     )
                             }
                         </ul>
                     </div>
-                    <Order />
+                    <Order 
+                        dishes={this.state.dishes}
+                        order={this.state.order}
+                        params={this.props.params}
+                    />
                     <Inventory addDish={this.addDish} loadSamples={this.loadSamples} />
                 </div>
             </div>
