@@ -1,15 +1,36 @@
 import React, { Component } from 'react';
 
 class Inventory extends Component {
+    constructor() {
+        super();
+        this.state = {
+            name: '',
+            price: '',
+            status: '',
+            desc: '',
+            image: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(name) {
+        return e => this.setState({
+            [name]: e.target.value
+        });
+    }
+
     createDish(e) {
         e.preventDefault();
+        const { name, price, status, desc, image } = this.state;
         const dish = {
-            name: this.name.value,
-            price: this.price.value,
-            status: this.status.value,
-            desc: this.desc.value,
-            image: this.image.value
+            name,
+            price,
+            status,
+            desc,
+            image
         };
+
         this.props.addDish(dish);
         this.dishForm.reset();
     }
@@ -19,14 +40,14 @@ class Inventory extends Component {
             <div className="inventory">
                 <h2>Inventory</h2>
                 <form ref={(input) => this.dishForm = input} className="dish-form" onSubmit={(e) => this.createDish(e)}>
-                    <input ref={(input) => this.name = input} type="text" placeholder="Dish Name" />
-                    <input ref={(input) => this.price = input} type="text" placeholder="Dish Price" />
-                    <select ref={(input) => this.status = input}>
+                    <input type="text" placeholder="Dish Name" onChange={this.handleChange('name')} />
+                    <input type="text" placeholder="Dish Price" onChange={this.handleChange('price')} />
+                    <select name="status" onChange={this.handleChange('status')}>
                         <option value="available">Fresh!</option>
                         <option value="unavailable">Sold Out!</option>
                     </select>
-                    <textarea ref={(input) => this.desc = input} placeholder="Dish Desc" ></textarea>
-                    <input ref={(input) => this.image = input} type="text" placeholder="Dish Image" />
+                    <textarea placeholder="Dish Desc" onChange={this.handleChange('desc')} ></textarea>
+                    <input type="text" placeholder="Dish Image" onChange={this.handleChange('image')} />
                     <button type="submit">+ Add Item</button>
                 </form>
                 <button type="submit" onClick={this.props.loadSamples}>Load Sample Dishes</button>

@@ -14,7 +14,7 @@ class Order extends Component {
         return (
             <li key={key}>
                 <span>{count} X {dish.name} </span>
-                <span className="price">{count * Number(price)}$</span>
+                <span className="price">{(count * Number(price)).toFixed(2)}$</span>
             </li>
         );
     }

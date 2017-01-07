@@ -29,8 +29,9 @@ export default class App extends Component {
     }
 
     loadSamples() {
+        const dishes = this.state.dishes;
         this.setState({
-            dishes: sampleDishes
+            dishes: {...dishes, ...sampleDishes}
         });
     }
 
