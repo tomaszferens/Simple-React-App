@@ -33,10 +33,12 @@ class Order extends Component {
                 <ul className="order-list">
                     {orderIds.map(this.renderOrder)}
                     <li className="total">
+                        <hr />
                         <strong>Total: </strong>
                         {total.toFixed(2)}$
                     </li>
                 </ul>
+                <button onClick={this.props.removeOrder}>Reset Order</button>
             </div>
         );
     }

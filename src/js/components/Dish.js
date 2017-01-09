@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dish = ({ details, index, addToOrder }) => (
+const Dish = ({ details, index, addToOrder, removeDish }) => (
     <li className="menu-dish">
         <img src={details.image} />
         <div>
@@ -11,6 +11,7 @@ const Dish = ({ details, index, addToOrder }) => (
                 <button onClick={() => addToOrder(index)} type="button">Buy</button>
         </div>
         <span className="price">{details.price}</span>
+        <i onClick={removeDish.bind(null, index)}>✖</i>
     </li>
 );
 

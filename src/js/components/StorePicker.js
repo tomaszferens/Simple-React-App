@@ -9,6 +9,7 @@ class StorePicker extends Component {
 
     render() {
         return (
+            
             <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
                 <div className="group">
                     <input type="text" 
@@ -19,6 +20,7 @@ class StorePicker extends Component {
                     <span className="bar"></span>
                     <label>Reactaurant</label>
                     <button type="submit">Go to Store</button>
+                    <code>// type anything above!</code>
                 </div>
             </form>
         );

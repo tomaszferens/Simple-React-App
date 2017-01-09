@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 import Dish from './Dish';
 import Header from './Header';
@@ -19,6 +20,8 @@ export default class App extends Component {
         this.loadSamples = this.loadSamples.bind(this);
         this.addDish = this.addDish.bind(this);
         this.addToOrder = this.addToOrder.bind(this);
+        this.removeOrder = this.removeOrder.bind(this);
+        this.removeDish = this.removeDish.bind(this);
     }
 
     addDish(dish) {
@@ -41,6 +44,21 @@ export default class App extends Component {
         this.setState({ order });
     }
 
+    removeOrder() {
+        this.setState({
+            order: {}
+        });
+    }
+
+    removeDish(dish) {
+        const dishes = _.omit(this.state.dishes, dish);
+        const order = _.omit(this.state.order, dish);
+        this.setState({
+            dishes,
+            order
+        });
+    }
+
     render() {
         return (
             <div className="reactaurant">
@@ -53,7 +71,7 @@ export default class App extends Component {
                                 Object
                                     .keys(this.state.dishes)
                                     .map(key => 
-                                        <Dish key={key} index={key} details={this.state.dishes[key]} addToOrder={this.addToOrder} />
+                                        <Dish removeDish={this.removeDish} key={key} index={key} details={this.state.dishes[key]} addToOrder={this.addToOrder} />
                                     )
                             }
                         </ul>
@@ -61,6 +79,7 @@ export default class App extends Component {
                     <Order 
                         dishes={this.state.dishes}
                         order={this.state.order}
+                        removeOrder={this.removeOrder}
                         params={this.props.params}
                     />
                     <Inventory addDish={this.addDish} loadSamples={this.loadSamples} />

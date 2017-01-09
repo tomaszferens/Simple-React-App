@@ -115,21 +115,30 @@ ul.list-of-dishes > li.menu-dish {
         margin: 0;
     }
     span.price {
+        position: relative;
+        left: 15px;
         font-weight: bold;
+        height: 20px;
     }
     p {
         font-size: 12px;
+    }
+    i {
+        font-size: 14px;
+        cursor: pointer;
+        color: rgb(200, 10, 50);
+        margin-top: 65px;
+        font-style: normal;
     }
 }
 
 .group {
     width: 320px;
-    height: 100px;
+    height: 150px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 200px;
-    position:relative; 
-    margin-bottom:45px;
+    position: relative;
 
     input {
         font-size:18px;
@@ -177,6 +186,15 @@ ul.list-of-dishes > li.menu-dish {
 
     button:focus {
         background: rgba(#333030, .8);
+    }
+
+    code {
+        display: block;
+        width: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        font-size: 10px;
     }
 }
 .inventory {
@@ -226,5 +244,15 @@ ul.list-of-dishes > li.menu-dish {
     .order-list > li:last-of-type {
         margin-top: 20px;
         list-style: none;
+    }
+
+    li.total {
+        text-align: right;
+        margin-right: 10px;
+
+        hr {
+            width: 300px;
+            margin-right: 60px;
+        }
     }
 }
