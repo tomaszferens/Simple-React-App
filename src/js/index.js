@@ -4,12 +4,12 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import '../style/styles.scss';
 
 import App from './components/App';
-import StorePicker from './components/StorePicker';
+import PickStore from './components/PickStore';
 
 const router = (
     <Router history={browserHistory}>
         <Route path="/">
-            <IndexRoute component={StorePicker}></IndexRoute>
+            <IndexRoute component={PickStore}></IndexRoute>
             <Route path="store/:storeId" component={App}></Route>
         </Route>
     </Router>

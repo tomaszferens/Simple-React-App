@@ -9,7 +9,7 @@ class Order extends Component {
     renderOrder(key) {
         const dish = this.props.dishes[key];
         const count = this.props.order[key];
-        const price = dish.price.split('$')[0];
+        const price = dish.price;
 
         return (
             <li key={key}>
@@ -25,7 +25,7 @@ class Order extends Component {
             const dish = this.props.dishes[key];
             const count = this.props.order[key];
             
-            return prevTotal + (count * dish.price.split('$')[0] || 0);
+            return prevTotal + (count * dish.price || 0);
         }, 0);
         return (
             <div className="order">

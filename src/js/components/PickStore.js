@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class StorePicker extends Component {
+class PickStore extends Component {
     goToStore(e) {
         e.preventDefault();
         const storeId = this.storeInput.value;
@@ -27,4 +27,4 @@ class StorePicker extends Component {
     }
 }
 
-export default StorePicker;
+export default PickStore;
