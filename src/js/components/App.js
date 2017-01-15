@@ -71,7 +71,13 @@ export default class App extends Component {
                                 Object
                                     .keys(this.state.dishes)
                                     .map(key => 
-                                        <Dish removeDish={this.removeDish} key={key} index={key} details={this.state.dishes[key]} addToOrder={this.addToOrder} />
+                                        <Dish 
+                                            removeDish={this.removeDish} 
+                                            key={key} 
+                                            index={key} 
+                                            details={this.state.dishes[key]} 
+                                            addToOrder={this.addToOrder} 
+                                        />
                                     )
                             }
                         </ul>
@@ -82,7 +88,10 @@ export default class App extends Component {
                         removeOrder={this.removeOrder}
                         params={this.props.params}
                     />
-                    <Inventory addDish={this.addDish} loadSamples={this.loadSamples} />
+                    <Inventory 
+                        addDish={this.addDish} 
+                        loadSamples={this.loadSamples} 
+                    />
                 </div>
             </div>
         );

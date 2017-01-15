@@ -13,8 +13,8 @@ class Order extends Component {
 
         return (
             <li key={key}>
-                <span>{count} X {dish.name} </span>
-                <span className="price">{(count * Number(price)).toFixed(2)}$</span>
+                <span><i>{count} x</i> {dish.name} </span>
+                <span className="price"><strong>{(count * Number(price)).toFixed(2)}$</strong></span>
             </li>
         );
     }
@@ -34,8 +34,9 @@ class Order extends Component {
                     {orderIds.map(this.renderOrder)}
                     <li className="total">
                         <hr />
-                        <strong>Total: </strong>
-                        {total.toFixed(2)}$
+                        <strong>
+                            Total: {total.toFixed(2)}$
+                        </strong>
                     </li>
                 </ul>
                 <button onClick={this.props.removeOrder}>Reset Order</button>
